@@ -1,0 +1,190 @@
+<div class="container w-50">
+  <h3 class="h3Above mb-4">Reaktív űrlap</h3>
+
+  <form [formGroup]="eredmenyKalkulator" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="elso" class="form-label"
+        >Szövegszerkesztés, prezentáció, grafika, weblapkészítés
+      </label>
+      <input
+        type="number"
+        name="elso"
+        formControlName="elso"
+        class="form-control"
+      />
+      <small
+        class="text-danger"
+        *ngIf="
+          !eredmenyKalkulator.controls['elso']?.valid &&
+          (eredmenyKalkulator.controls['elso']?.touched ||
+            eredmenyKalkulator.controls['elso']?.dirty)
+        "
+      >
+        <div *ngIf="eredmenyKalkulator.controls['elso'].errors?.['required']">
+          Az elért pontszám megadása kötelező!
+        </div>
+        <div *ngIf="eredmenyKalkulator.controls['elso'].errors?.['min']">
+          Az elért pontszám nem lehet kisebb 0-nál!
+        </div>
+        <div *ngIf="eredmenyKalkulator.controls['elso'].errors?.['max']">
+          Az elért pontszám nem lehet nagyobb 30-nál!
+        </div>
+      </small>
+    </div>
+
+    <div class="mb-3">
+      <label for="masodik" class="form-label">Táblázatkezelés </label>
+      <input
+        type="number"
+        name="masodik"
+        formControlName="masodik"
+        class="form-control"
+      />
+      <small
+        class="text-danger"
+        *ngIf="
+          !eredmenyKalkulator.controls['masodik']?.valid &&
+          (eredmenyKalkulator.controls['masodik']?.touched ||
+            eredmenyKalkulator.controls['masodik']?.dirty)
+        "
+      >
+        <div
+          *ngIf="eredmenyKalkulator.controls['masodik'].errors?.['required']"
+        >
+          Az elért pontszám megadása kötelező!
+        </div>
+        <div *ngIf="eredmenyKalkulator.controls['masodik'].errors?.['min']">
+          Az elért pontszám nem lehet kisebb 0-nál!
+        </div>
+        <div *ngIf="eredmenyKalkulator.controls['masodik'].errors?.['max']">
+          Az elért pontszám nem lehet nagyobb 15-nél!
+        </div>
+      </small>
+    </div>
+
+    <div class="mb-3">
+      <label for="harmadik" class="form-label">Adatbázis-kezelés </label>
+      <input
+        type="number"
+        name="harmadik"
+        formControlName="harmadik"
+        class="form-control"
+      />
+      <small
+        class="text-danger"
+        *ngIf="
+          !eredmenyKalkulator.controls['harmadik']?.valid &&
+          (eredmenyKalkulator.controls['harmadik']?.touched ||
+            eredmenyKalkulator.controls['harmadik']?.dirty)
+        "
+      >
+        <div
+          *ngIf="eredmenyKalkulator.controls['harmadik'].errors?.['required']"
+        >
+          Az elért pontszám megadása kötelező!
+        </div>
+        <div *ngIf="eredmenyKalkulator.controls['harmadik'].errors?.['min']">
+          Az elért pontszám nem lehet kisebb 0-nál!
+        </div>
+        <div *ngIf="eredmenyKalkulator.controls['harmadik'].errors?.['max']">
+          Az elért pontszám nem lehet nagyobb 30-nál!
+        </div>
+      </small>
+    </div>
+
+    <div class="mb-3">
+      <label for="negyedik" class="form-label"
+        >Algoritmizálás, adatmodellezés
+      </label>
+      <input
+        type="number"
+        name="negyedik"
+        formControlName="negyedik"
+        class="form-control"
+      />
+      <small
+        class="text-danger"
+        *ngIf="
+          !eredmenyKalkulator.controls['negyedik']?.valid &&
+          (eredmenyKalkulator.controls['negyedik']?.touched ||
+            eredmenyKalkulator.controls['negyedik']?.dirty)
+        "
+      >
+        <div
+          *ngIf="eredmenyKalkulator.controls['negyedik'].errors?.['required']"
+        >
+          Az elért pontszám megadása kötelező!
+        </div>
+        <div *ngIf="eredmenyKalkulator.controls['negyedik'].errors?.['min']">
+          Az elért pontszám nem lehet kisebb 0-nál!
+        </div>
+        <div *ngIf="eredmenyKalkulator.controls['negyedik'].errors?.['max']">
+          Az elért pontszám nem lehet nagyobb 45-nél!
+        </div>
+      </small>
+    </div>
+
+    <div class="mb-3">
+      <label for="szobeli" class="form-label">Szóbeli eredmény </label>
+      <input
+        type="number"
+        name="szobeli"
+        formControlName="szobeli"
+        class="form-control"
+      />
+      <small
+        class="text-danger"
+        *ngIf="
+          !eredmenyKalkulator.controls['szobeli']?.valid &&
+          (eredmenyKalkulator.controls['szobeli']?.touched ||
+            eredmenyKalkulator.controls['szobeli']?.dirty)
+        "
+      >
+        <div
+          *ngIf="eredmenyKalkulator.controls['szobeli'].errors?.['required']"
+        >
+          Az elért pontszám megadása kötelező!
+        </div>
+        <div *ngIf="eredmenyKalkulator.controls['szobeli'].errors?.['min']">
+          Az elért pontszám nem lehet kisebb 0-nál!
+        </div>
+        <div *ngIf="eredmenyKalkulator.controls['szobeli'].errors?.['max']">
+          Az elért pontszám nem lehet nagyobb 30-nál!
+        </div>
+      </small>
+    </div>
+
+    <label class="form-label"
+      >Az emelt informatika érettségin elért eredményed:</label
+    >
+    <div class="mx-3 mb-5 d-flex justify-content-center">
+      <input
+        type="text"
+        formControlName="szazalek"
+        class="form-control w-25 me-4 text-center"
+      />
+      <input
+        type="text"
+        formControlName="erdemjegy"
+        class="form-control w-25 text-center"
+      /><br />
+    </div>
+
+    <div class="mb-5 text-center">
+      <input
+        type="submit"
+        value="Mehet"
+        width="45"
+        [disabled]="!eredmenyKalkulator.valid"
+        class="btn btn-success butt me-2"
+      />
+      <input
+        type="button"
+        value="Töröl"
+        width="45"
+        (click)="torol()"
+        class="btn btn-danger butt"
+      />
+    </div>
+  </form>
+</div>

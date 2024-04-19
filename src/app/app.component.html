@@ -1,0 +1,21 @@
+<div class="container">
+  <h1 class="my-5">Üdvözöllek az oldalon!</h1>
+  <p>
+    Az oldalon található kalkulátorok segítségével gyorsan kiszámolhatod az
+    emelt informatika érettségin elért eredményedet a kapott részpontszámok
+    alapján. Ehhez nincs más teendőd, mint kiválasztani a számodra
+    szimpatikusabb űrlapot, majd kitölteni a mezőket az egyes részpontokkal.
+  </p>
+  <p>Sok sikert!</p>
+  <div class="text-center my-5">
+    <button class="btn btn-primary mx-2" [routerLink]="['sablonvezerelt']">
+      Sablonvezérelt űrlap
+    </button>
+    <button class="btn btn-primary mx-2" [routerLink]="['reaktiv']">
+      Reaktív űrlap
+    </button>
+  </div>
+  <hr />
+
+  <router-outlet></router-outlet>
+</div>
